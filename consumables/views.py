@@ -1,8 +1,8 @@
-from rest_framework import viewsets
-from .models import GameConsumable
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from consumables.models import GameConsumable
 from .serializers import GameConsumableSerializer
 
-class GameConsumableViewSet(viewsets.ModelViewSet):
+class GameConsumableList(ListCreateAPIView):
     queryset = GameConsumable.objects.all()
     serializer_class = GameConsumableSerializer
     
